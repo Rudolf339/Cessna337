@@ -390,7 +390,6 @@
 		<ptt type="bool">0</ptt>
 	</comm>
 	<nav n="0">
-		<power-btn type="bool">false</power-btn>
 		<volume type="double">0.5</volume>
 		<ident type="bool">false</ident>
 	</nav>
@@ -403,7 +402,6 @@
 		<ptt type="bool">0</ptt>
 	</comm>
 	<nav n="1">
-		<power-btn type="bool">false</power-btn>
 		<volume type="double">0.5</volume>
 		<ident type="bool">false</ident>
 	</nav>
