@@ -3512,7 +3512,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
 </effect>
 
 <effect>
-	<inherits-from>Aircraft/Cessna337/Models/Effects/Cessna337-uber-bump</inherits-from>
+	<inherits-from>Aircraft/Cessna337/Models/Effects/Cessna337-uber-opaque</inherits-from>
 		<object-name>Alas</object-name>
 		<object-name>AleronDER</object-name>
 		<object-name>AleronIZQ</object-name>

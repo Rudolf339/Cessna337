@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- override the default effect for .dds textured objects -->
+<!-- override the combined effect for .dds textured objects -->
 <PropertyList>
 	<name>Cessna337-uber-opaque</name>
-	<inherits-from>Effects/model-default</inherits-from>
+	<inherits-from>Effects/model-combined</inherits-from>
 	<parameters>
 		<rendering-hint>opaque</rendering-hint>
 		<transparent>false</transparent>
