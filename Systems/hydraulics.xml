@@ -1,0 +1,60 @@
+<system name="hydraulical system Cessna337">
+    <channel name="hyd">
+        <property value="0">systems/hydraulic/pressure</property>
+        <property value="1">systems/hydraulic/res-level</property>
+	<property value="0">systems/hydraulic/man-pump</property>
+	
+	<switch name="systems/hydraulic/man-pump">
+	    <default value="0"/>
+	    <test value="0.00015">
+		systems/hydraulic/man-pump-cmd eq 1
+	    </test>
+	</switch>
+
+	<fcs_function name="systems/hydraulic/drain/gear-pd">
+	    <function>
+		<product>
+		    <abs>
+			<difference>
+			    <property>systems/hydraulic/drain/gear-last-pos</property>
+			    <property>gear/gear-pos-norm</property>
+			</difference>
+		    </abs>
+		    <value>-1.5</value>
+		</product>
+	    </function>
+	</fcs_function>
+
+	<pure_gain name="systems/hydraulic/drain/gear-last-pos">
+	    <input>gear/gear-pos-norm</input>
+	    <gain>1</gain>
+	</pure_gain>
+	
+        <switch name="systems/hydraulic/pump-on">
+    	    <default value="0"/>
+    	    <test logic="AND" value="1">
+    		systems/hydraulic/pressure lt 1.0
+    		propulsion/engine/engine-rpm gt 1000
+    	    </test>
+        </switch>
+    
+	<fcs_function name="systems/hydraulic/pressure">
+	    <function>
+		<sum>
+		    <product>
+			<property>systems/hydraulic/pump-on</property>
+			<value>0.004</value>
+		    </product>
+		    <property>systems/hydraulic/pressure</property>
+		    <property>systems/hydraulic/drain/gear-pd</property>
+		    <property>systems/hydraulic/man-pump</property>
+		</sum>
+	    </function>
+	    <clipto>
+		<min>-1</min>
+		<max>1</max>
+	    </clipto>
+	</fcs_function>
+    </channel>
+</system>
+        

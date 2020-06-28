@@ -182,9 +182,9 @@
 
 	<systems>
 		<path>Aircraft/Cessna337/Systems/Cessna337-systems.xml</path>
-        <autopilot>
-            <path>Aircraft/Cessna337/Systems/Cessna337-autopilot.xml</path>
-        </autopilot>
+		<autopilot>
+		    <path>Aircraft/Cessna337/Systems/Cessna337-autopilot.xml</path>
+		</autopilot>
 		<property-rule n="100">
 			<name>Instrument-Filter</name>
 			<path>Aircraft/Cessna337/Systems/Cessna337-filters.xml</path>
@@ -198,7 +198,7 @@
   <!-- <alarms>
     <stall-warning type="double">0</stall-warning>
   </alarms> -->
-	
+
 	<rendering>
     <pilot-model>
       <available>true</available>
@@ -466,6 +466,23 @@
 				</script>
 			</binding>
 		</key>
+
+		<key n="8">
+		    <name>ctrl+h</name>
+		    <desc>Manual hydraulic pump</desc>
+		    <binding>
+			<command>property-assign</command>
+			<property>controls/hydraulic/system/man-pump</property>
+			<value>1</value>
+		    </binding>
+		    <mod-up>
+			<binding>
+			    <command>property-assign</command>
+			    <property>controls/hydraulic/system/man-pump</property>
+			    <value>0</value>
+			</binding>
+		    </mod-up>
+		</key>
 	</keyboard>
 </input>
 
@@ -516,6 +533,11 @@
 			<propeller type="double">0.0</propeller>
 			<fuselage type="double">0.0</fuselage>
 		</ice>
+		<systems>
+		    <hydraulic>
+			<man-pump-cmd alias="/controls/hydraulic/system/man-pump"/>
+		    </hydraulic>
+		</systems>
 	</jsbsim>
 </fdm>
 
