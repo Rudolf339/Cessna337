@@ -1,0 +1,90 @@
+<PropertyList>
+    <group>
+	<name>Standard</name>
+	<checklist>
+	    <title>Before starting engines</title>
+	    <item>
+		<name>Preflight Inspection</name>
+		<value>COMPLETE</value>
+	    </item>
+	    <item>
+		<name>Cabin Door</name>
+		<value>CLOSED</value>
+		<condition>
+		    <equals>
+			<property>/controls/door</property>
+			<value>0</value>
+		    </equals>
+		</condition>
+	    </item>
+	    <item>
+		<name>Landing Gear Switch</name>
+		<value>EXTENDED</value>
+		<condition>
+		    <equals>
+			<property>/controls/gear/gear-down</property>
+			<value>1</value>
+		    </equals>
+		</condition>
+	    </item>
+	    <item>
+		<name>Avionics Power</name>
+		<value>OFF</value>
+		<condition>
+		    <equals>
+			<property>/controls/switches/master-avionics</property>
+			<value>0</value>
+		    </equals>
+		</condition>
+	    </item>
+	    <item>
+		<name>Battery and Alternators</name>
+		<value>ON</value>
+		<condition>
+		    <and>
+			<equals>
+			    <property>/controls/engines/engine[0]/master-bat</property>
+			    <value>1</value>
+			</equals>
+			<equals>
+			    <property>/controls/engines/engine[0]/master-alt</property>
+			    <value>1</value>
+			</equals>
+			<equals>
+			    <property>/controls/engines/engine[1]/master-alt</property>
+			    <value>1</value>
+			</equals>
+		    </and>
+		</condition>
+	    </item>
+	    <item>
+		<name>Cowl Flaps</name>
+		<value>OPEN</value>
+		<condition>
+		    <and>
+			<equals>
+			    <property>controls/engines/engine[0]/cowl-flaps-norm</property>
+			    <value>1</value>
+			</equals>
+			<equals>
+			    <property>controls/engines/engine[1]/cowl-flaps-norm</property>
+			    <value>1</value>
+			</equals>
+		    </and>
+		</condition>
+	    </item>
+	    <item>
+		<name>Fuel Selectors: Front Engine</name>
+		<value>LEFT TANK</value>
+	    </item>
+	    <item>
+		<name>Fuel Selectors: Rear Engine</name>
+		<value>RIGHT TANK</value>
+	    </item>
+	    <item>
+		<name>Fuel Quantity</name>
+		<value>CHECK</value>
+	    </item>
+	</checklist>
+    </group>
+</PropertyList>

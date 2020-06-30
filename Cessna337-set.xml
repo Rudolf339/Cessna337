@@ -200,11 +200,13 @@
   </alarms> -->
 
 	<rendering>
-    <pilot-model>
-      <available>true</available>
-    </pilot-model>
-  </rendering>
+	    <pilot-model>
+		<available>true</available>
+	    </pilot-model>
+	</rendering>
 
+	<checklists include="Dialogs/checklist.xml"/>
+	
 </sim>
 
 <autopilot>
