@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <PropertyList>
     <group>
 	<name>Standard</name>
@@ -86,5 +87,375 @@
 		<value>CHECK</value>
 	    </item>
 	</checklist>
+	
+	<checklist>
+	    <title>Engine Start</title>
+	    <item>
+		<name>Beacon</name>
+		<value>ON</value>
+		<condition>
+		    <equals>
+			<property>controls/lighting/beacon</property>
+			<value>1</value>
+		    </equals>
+		</condition>
+	    </item>
+	    <item>
+		<name>FRONT ENGINE</name>
+	    </item>
+	    <item>
+		<name>Mixtur</name>
+		<value>RICH</value>
+		<condition>
+		    <equals>
+			<property>controls/engines/engine/mixture</property>
+			<value>1</value>
+		    </equals>
+		</condition>
+	    </item>
+	    <item>
+		<name>Propellers</name>
+		<value>HIGH RPM</value>
+		<condition>
+		    <equals>
+			<property>controls/engines/engine/propeller-pitch</property>
+			<value>1</value>
+		    </equals>
+		</condition>
+	    </item>
+	    <item>
+		<name>Throttles</name>
+		<value>CLOSED</value>
+		<condition>
+		    <equals>
+			<property>controls/engines/engine/throttle</property>
+			<value>0</value>
+		    </equals>
+	    </condition>
+	    </item>
+	    <item>
+		<name>Auxiliary Fuel Pump</name>
+	    	<value>HI</value>
+		<condition>
+		    <equals>
+			<property>controls/engines/engine/fuel-pump</property>
+			<value>1</value>
+		    </equals>
+		</condition>
+	    </item>
+	    <item>
+		<name>Throttle</name>
+		<value>ADVANCE, THEN CLOSE</value>
+	    </item>	    
+	    <item>
+		<name>Auxiliary Fuel Pump</name>
+	    	<value>OFF</value>
+		<condition>
+		    <equals>
+			<property>controls/engines/engine/fuel-pump</property>
+			<value>0</value>
+		    </equals>
+		</condition>
+	    </item>
+	    <item>
+		<name>Propeller Area</name>
+		<value>CLEAR</value>
+	    </item>
+	    <item>
+		<name>Magnetos</name>
+		<value>BOTH</value>
+		<condition>
+		    <equals>
+			<property>controls/engines/engine/magnetos</property>
+			<value>3</value>
+		    </equals>
+		</condition>
+	    </item>
+	    <item>
+		<name>Starter</name>
+		<value>ENGAGE</value>
+		<condition>
+		    <equals>
+			<property>controls/engines/engine/starter</property>
+			<value>1</value>
+		    </equals>
+		</condition>
+	    </item>
+	    <item>
+		<name>Throttle</name>
+		<value>ADVANCE SLOWLY</value>
+		<condition>
+		    <greater-than>
+			<property>controls/engines/engine/throttle</property>
+			<value>0.05</value>
+		    </greater-than>
+		</condition>
+	    </item>
+	    <item>
+		<name>Starter</name>
+		<value>RELEASE AS ENGINE STARTS</value>
+		<condition>
+		    <and>
+			<equals>
+			    <property>controls/engines/engine/starter</property>
+			    <value>0</value>
+			</equals>
+			<equals>
+			    <property>engines/engine/running</property>
+			    <value>1</value>
+			</equals>
+		    </and>
+		</condition>
+	    </item>
+	    <item>
+		<name>Throttle</name>
+		<value>RPM 800-1000</value>
+		<condition>
+		    <and>
+			<greater-than>
+			    <property>engines/engine/rpm</property>
+			    <value>800</value>
+			</greater-than>
+			<less-than>
+			    <property>engines/engine/rpm</property>
+			    <value>1000</value>
+			</less-than>
+		    </and>
+		</condition>
+	    </item>
+	    <item>
+		<name>Oil Pressure</name>
+		<value>CHECK</value>
+	    </item>
+
+	    <item>
+		<name>REAR ENGINE</name>
+	    </item>
+	    <item>
+		<name>Mixtur</name>
+		<value>RICH</value>
+		<condition>
+		    <equals>
+			<property>controls/engines/engine[1]/mixture</property>
+			<value>1</value>
+		    </equals>
+		</condition>
+	    </item>
+	    <item>
+		<name>Propellers</name>
+		<value>HIGH RPM</value>
+		<condition>
+		    <equals>
+			<property>controls/engines/engine[1]/propeller-pitch</property>
+			<value>1</value>
+		    </equals>
+		</condition>
+	    </item>
+	    <item>
+		<name>Throttles</name>
+		<value>CLOSED</value>
+		<condition>
+		    <equals>
+			<property>controls/engines/engine[1]/throttle</property>
+			<value>0</value>
+		    </equals>
+	    </condition>
+	    </item>
+	    <item>
+		<name>Auxiliary Fuel Pump</name>
+	    	<value>HI</value>
+		<condition>
+		    <equals>
+			<property>controls/engines/engine[1]/fuel-pump</property>
+			<value>1</value>
+		    </equals>
+		</condition>
+	    </item>
+	    <item>
+		<name>Throttle</name>
+		<value>ADVANCE, THEN CLOSE</value>
+	    </item>	    
+	    <item>
+		<name>Auxiliary Fuel Pump</name>
+	    	<value>OFF</value>
+		<condition>
+		    <equals>
+			<property>controls/engines/engine[1]/fuel-pump</property>
+			<value>0</value>
+		    </equals>
+		</condition>
+	    </item>
+	    <item>
+		<name>Propeller Area</name>
+		<value>CLEAR</value>
+	    </item>
+	    <item>
+		<name>Magnetos</name>
+		<value>BOTH</value>
+		<condition>
+		    <equals>
+			<property>controls/engines/engine[1]/magnetos</property>
+			<value>3</value>
+		    </equals>
+		</condition>
+	    </item>
+	    <item>
+		<name>Starter</name>
+		<value>ENGAGE</value>
+		<condition>
+		    <equals>
+			<property>controls/engines/engine[1]/starter</property>
+			<value>1</value>
+		    </equals>
+		</condition>
+	    </item>
+	    <item>
+		<name>Throttle</name>
+		<value>ADVANCE SLOWLY</value>
+		<condition>
+		    <greater-than>
+			<property>controls/engines/engine[1]/throttle</property>
+			<value>0.05</value>
+		    </greater-than>
+		</condition>
+	    </item>
+	    <item>
+		<name>Starter</name>
+		<value>RELEASE AS ENGINE STARTS</value>
+		<condition>
+		    <and>
+			<equals>
+			    <property>controls/engines/engine[1]/starter</property>
+			    <value>0</value>
+			</equals>
+			<equals>
+			    <property>engines/engine[1]/running</property>
+			    <value>1</value>
+			</equals>
+		    </and>
+		</condition>
+	    </item>
+	    <item>
+		<name>Throttle</name>
+		<value>RPM 800-1000</value>
+		<condition>
+		    <and>
+			<greater-than>
+			    <property>engines/engine[1]/rpm</property>
+			    <value>800</value>
+			</greater-than>
+			<less-than>
+			    <property>engines/engine[1]/rpm</property>
+			    <value>1000</value>
+			</less-than>
+		    </and>
+		</condition>
+	    </item>
+	    <item>
+		<name>Oil Pressure</name>
+		<value>CHECK</value>
+	    </item>
+	    <item>
+		<name> </name>
+	    </item>
+	    <item>
+		<name>Avionics Power Switch</name>
+		<value>ON</value>
+		<conditon>
+		    <equals>
+			<property>controls/switches/master-avionics</property>
+			<value>1</value>
+		    </equals>
+		</conditon>
+	    </item>
+	    <item>
+		<name>Radios</name>
+		<value>ON AND SET</value>
+	    </item>
+	</checklist>
+
+	<checklist>
+	    <title>Before Takeoff</title>
+	    <item>
+		<name>Parking Break</name>
+		<value>SET</value>
+		<condition>
+		    <equals>
+			<property>controls/gear/break-parking</property>
+			<value>1</value>
+		    </equals>
+		</condition>
+	    </item>
+	    <item>
+		<name>Flight Controls</name>
+		<value> FREE and CORRECT</value>
+	    </item>
+	    <item>
+		<name>Flight Instruments</name>
+		<value> SET and CHECKED</value>
+	    </item>
+	    <item>
+		<name>Fuel Mixtures, Selectors, Quantities</name>
+		<value>RECHECK</value>
+	    </item>
+	    <item>
+		<name>Elevator and rudder trim</name>
+		<value>SET</value>
+	    </item>
+	    <item>
+		<name>Engine Runup</name>
+	    </item>
+	    <item>
+		<name>Throttles</name>
+		<value>RPM: 1800</value>
+	    </item>
+	    <item>
+		<name>Magnetos</name>
+		<value>CHECK - RPM DROP LESS THAN 150</value>
+	    </item>
+	    <item>
+		<name>propellers</name>
+		<value>CHECK - feather to 1200 RPM then HIGH</value>
+	    </item>
+	    <item>
+		<name>Alternators</name>
+		<value>CHECK</value>
+	    </item>
+	    <item>
+		<name>Engine Instruments</name>
+		<value>CHECK</value>
+	    </item>
+	    <item>
+		<name>Suction Gauge</name>
+		<value>CHECK</value>
+	    </item>
+	    <item>
+		<name>Cabin Door and Windows</name>
+		<value>CLOSED and LATCHED</value>
+	    </item>
+	    <item>
+		<name>Autopilot</name>
+		<value>OFF</value>
+	    </item>
+	    <item>
+		<name>Synchrophaser</name>
+		<value>OFF</value>
+	    </item>
+	    <item>
+		<name>Lighting</name>
+		<value>AS REQUIRED</value>
+	    </item>
+	    <item>
+		<name>Parking Brake</name>
+		<value>RELEASE</value>
+		<condition>
+		    <equals>
+			<property>controls/gear/break-parking</property>
+			<value>1</value>
+		    </equals>
+		</condition>
+	    </item>
+	</checklist>
+	
     </group>
 </PropertyList>
